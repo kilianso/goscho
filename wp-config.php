@@ -65,6 +65,10 @@ define( 'NONCE_SALT',       'rsU&Sv7/ZVd&}tmk}.?T1y!v{wsM>|)7c[NZ08xx#E;@mqX{H6^
  */
 $table_prefix  = 'wp_';
 
+//disable WP Post Revisions
+define('AUTOSAVE_INTERVAL', 300); // seconds
+define('WP_POST_REVISIONS', false);
+
 /**
  * For developers: WordPress debugging mode.
  *
