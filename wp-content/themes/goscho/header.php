@@ -18,6 +18,9 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	<?php
+	//get theme options
+	$options = get_option( 'theme_settings' ); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -25,6 +28,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'goscho' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<span>Aktuelle Farb-Variante:<?php echo get_theme_mod( 'color_scheme')?></span>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();

@@ -161,3 +161,26 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 /* Disable Gutenberg */
 add_filter('use_block_editor_for_post', '__return_false', 10);
+
+// custom style fields
+
+/**
+ * Add our Customizer content
+ */
+function extend_design( $wp_customize ) {
+	// Add all your Customizer content (i.e. Panels, Sections, Settings & Controls) here...
+	$wp_customize->add_setting( 'color_scheme',
+   array(
+      'default' => '#333',
+      'sanitize_callback' => 'sanitize_hex_color',
+   )
+	);
+	$wp_customize->add_control( 'color_scheme',
+	array(
+		'label' => __( 'Website Farb-Schema' ),
+		'section' => 'colors',
+		'type' => 'color',
+	)
+	);
+ };
+ add_action( 'customize_register', 'extend_design' );
