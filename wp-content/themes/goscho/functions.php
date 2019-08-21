@@ -159,3 +159,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* Disable Gutenberg */
+add_filter('use_block_editor_for_post', '__return_false', 10);
