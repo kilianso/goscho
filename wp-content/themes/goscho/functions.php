@@ -169,18 +169,39 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
  */
 function extend_design( $wp_customize ) {
 	// Add all your Customizer content (i.e. Panels, Sections, Settings & Controls) here...
-	$wp_customize->add_setting( 'color_scheme',
-   array(
-      'default' => '#333',
-      'sanitize_callback' => 'sanitize_hex_color',
-   )
+
+	$wp_customize->add_section( 'color_scheme' , array(
+		'title'      => __('Farb-Schema','goscho'),
+		'priority'   => 30,
+		) 
 	);
+
+
+	$wp_customize->add_setting( 'color_scheme',
+	array(
+		'default' => '#333',
+		'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
 	$wp_customize->add_control( 'color_scheme',
 	array(
 		'label' => __( 'Website Farb-Schema' ),
-		'section' => 'colors',
+		'section' => 'color_scheme',
 		'type' => 'color',
 	)
 	);
- };
- add_action( 'customize_register', 'extend_design' );
+
+	// remove everything else than 
+	$wp_customize->remove_section( 'title_tagline' );
+	$wp_customize->remove_section( 'custom_css' );
+	$wp_customize->remove_section( 'colors' );
+	$wp_customize->remove_section( 'header_image' );
+	$wp_customize->remove_section( 'background_image' );
+	$wp_customize->remove_section( 'static_front_page' );
+
+	$wp_customize->remove_panel( 'themes' );
+	$wp_customize->remove_panel( 'widgets' );
+	$wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false';
+};
+add_action( 'customize_register', 'extend_design' );
