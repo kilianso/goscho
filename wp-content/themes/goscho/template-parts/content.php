@@ -51,6 +51,20 @@
 			'after'  => '</div>',
 		) );
 		?>
+
+		<h4>Anmeldung</h4>
+		<form action="">
+			<input type="number" name="input_1" placeholder="Anzahl Personen" required>
+			<input type="text" name="inout_2_3" placeholder="Vorname" required>
+			<input type="text" name="input_2_6" placeholder="Nachname" required>
+			<input type="text" name="input_3" placeholder="Email" required>
+			<!-- Not visible but needs to be submitted -->
+			<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>">
+			<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>">
+			<input type="text" name="honeypot" placeholder="Not you Spam-Bot">
+			<button type="submit">Reservieren</button>
+		</form>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
