@@ -21,33 +21,23 @@
 	<?php
 	//get theme options
 	$options = get_option( 'theme_settings' ); ?>
+	<style>
+		:root {
+			--accent_color: <?php echo get_theme_mod( 'color_scheme')?>;
+		}
+	</style>
 </head>
-
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'goscho' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<span>Aktuelle Farb-Variante:<?php echo get_theme_mod( 'color_scheme')?></span>
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$goscho_description = get_bloginfo( 'description', 'display' );
-			if ( $goscho_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $goscho_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			<h2 class="main">Goscho.ch</h2>
 		</div><!-- .site-branding -->
-
+		<div class="site-logo">
+			<img src="" alt="">
+		</div>
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'goscho' ); ?></button>
 			<?php

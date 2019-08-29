@@ -9,8 +9,8 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<article id="event-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="event-details">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -20,18 +20,12 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
 				<?php
+				/*
 				goscho_posted_on();
-				goscho_posted_by();
+				goscho_posted_by();*/
 				?>
-			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php goscho_post_thumbnail(); ?>
-
-	<div class="entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
@@ -46,12 +40,20 @@
 			get_the_title()
 		) );
 
-		wp_link_pages( array(
+		/*wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'goscho' ),
 			'after'  => '</div>',
-		) );
+		) );*/
 		?>
+	</div><!-- .entry-header -->
 
+	<?php goscho_post_thumbnail(); ?>
+
+	<div class="entry-image-counter">
+		<img src="https://placeimg.com/400/400/arch" alt="">
+	</div>
+
+	<div class="event-registration">
 		<h4>Anmeldung</h4>
 		<form action="">
 			<input type="number" name="input_1" placeholder="Anzahl Personen" required>
@@ -59,15 +61,12 @@
 			<input type="text" name="input_2_6" placeholder="Nachname" required>
 			<input type="text" name="input_3" placeholder="Email" required>
 			<!-- Not visible but needs to be submitted -->
-			<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>">
-			<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>">
-			<input type="text" name="honeypot" placeholder="Not you Spam-Bot">
+			<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>" hidden>
+			<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>" hidden>
+			<input type="text" name="honeypot" placeholder="Not you Spam-Bot" hidden>
 			<button type="submit">Reservieren</button>
 		</form>
+	</div>
 
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php goscho_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php /* goscho_entry_footer(); */?>
 </article><!-- #post-<?php the_ID(); ?> -->

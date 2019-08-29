@@ -1,3 +1,77 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	background: #1A1A1A;
+	color: white;
+	padding: 0 5vw;
+	h1 {
+		span {
+			font-size: 1rem;
+		}
+	}
+	.menu-item a {
+		color:white;
+	}
+}
+
+article.post {
+	display: flex;
+	margin: 0 -5vw;
+	padding: 0 3vw;
+	&:first-child {
+		background: var(--accent_color)
+	}
+}
+
+.event-details, .entry-image-counter, .event-registration {
+	flex: 1 0 33.333%;
+	padding: 2vw;
+}
+
+.event-registration input {
+	width: 100%;
+	background: none;
+	appearance: none;
+	-webkit-appearance: none;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px 0 0 0;
+	border-radius: 0;
+	&:nth-child(4) {
+		border-width: 1px 0 1px 0;
+	}
+}
+
+.event-registration button {
+	width: 100%;
+	background: none;
+	appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid black;
+	margin-top: 1rem;
+	font-weight: bold;
+	padding: 1rem;
+}
+
+main {
+	padding: 0 5vw;
+}
+
+footer {
+	text-align: center;
+}
+
+.site-branding {
+	flex: 1;
+}
+
 .sticky {
 	display: block;
 }
