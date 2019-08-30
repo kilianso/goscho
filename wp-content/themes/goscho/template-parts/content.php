@@ -56,10 +56,10 @@
 	<div class="event-registration">
 		<h4>Anmeldung</h4>
 		<form action="">
-			<input type="number" name="input_1" placeholder="Anzahl Personen" required>
-			<input type="text" name="inout_2_3" placeholder="Vorname" required>
-			<input type="text" name="input_2_6" placeholder="Nachname" required>
-			<input type="text" name="input_3" placeholder="Email" required>
+			<input type="number" name="input_1" placeholder="Anzahl Personen" autocomplete="off" required>
+			<input type="text" name="inout_2_3" placeholder="Vorname" autocomplete="off" required>
+			<input type="text" name="input_2_6" placeholder="Nachname" autocomplete="off" required>
+			<input type="text" name="input_3" placeholder="Email" autocomplete="off" required>
 			<!-- Not visible but needs to be submitted -->
 			<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>" hidden>
 			<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>" hidden>
