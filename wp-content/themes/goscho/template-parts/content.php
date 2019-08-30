@@ -63,7 +63,7 @@
 			<!-- Not visible but needs to be submitted -->
 			<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>" hidden>
 			<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>" hidden>
-			<input type="text" name="honeypot" placeholder="Not you Spam-Bot" hidden>
+			<input type="text" name="input_8" placeholder="Not you Spam-Bot" hidden>
 			<button type="submit">Reservieren</button>
 		</form>
 	</div>
