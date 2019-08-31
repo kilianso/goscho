@@ -324,7 +324,7 @@ template {
  --------------------------------------------------------------*/
 body, button, input, select, optgroup, textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -420,6 +420,9 @@ figure {
   margin: 1em 0;
   /* Extra wide images within figure tags don't overflow the content area. */
 }
+a {
+  text-decoration: none;
+}
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -444,11 +447,31 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
   border-color: #aaa #bbb #bbb;
 }
+button, a.button {
+  width: 100%;
+  background: none;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid black;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  max-width: 200px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover, a.button:hover {
+  background: black;
+  color: white;
+}
+button.submit, a.button.submit {
+  font-weight: 700;
+}
 input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
-  color: #666;
+  color: #808285;
   border: 1px solid #ccc;
   border-radius: 3px;
-  padding: 3px;
+  padding: 0.5rem 0;
   outline: none;
 }
 input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
@@ -462,7 +485,7 @@ textarea {
 }
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+  box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 /*--------------------------------------------------------------
@@ -666,17 +689,58 @@ header.site-header a {
 }
 article.post {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 -5vw;
-  padding: 0 3vw;
+  padding: 0;
 }
 article.post:first-child {
   background: var(--accent_color);
 }
-.event-details, .entry-image-counter, .event-registration {
-  flex: 1 0 33.333%;
-  padding: 2vw;
+.event__details, .event__image__counter, .event__registration {
+  flex: 1 0 100%;
+  min-width: 320px;
+  padding: 5vw;
 }
-.event-registration input {
+.event__details h2, .event__image__counter h2, .event__registration h2 {
+  margin: 0;
+}
+.event__details h1, .event__image__counter h1, .event__registration h1 {
+  margin-top: 0;
+}
+@media only screen and (min-width: 990px) {
+  .event__details, .event__image__counter, .event__registration {
+    flex: 1 0 33.333%;
+  }
+}
+.event__image__counter {
+  padding: 5vw 0;
+  position: relative;
+}
+.event__image__counter .counter {
+  text-align: center;
+}
+.event__details {
+  display: flex;
+  flex-direction: column;
+}
+.event__details .event__info {
+  flex-grow: 1;
+}
+.event__date {
+  color: #808285;
+}
+.event__registration {
+  display: flex;
+  flex-direction: column;
+}
+.event__registration h2 {
+  align-self: flex-end;
+  margin-bottom: 1em;
+}
+.event__registration form {
+  flex-grow: 1;
+}
+.event__registration input {
   width: 100%;
   background: none;
   appearance: none;
@@ -686,18 +750,11 @@ article.post:first-child {
   border-width: 1px 0 0 0;
   border-radius: 0;
 }
-.event-registration input:nth-child(4) {
+.event__registration input:nth-child(4) {
   border-width: 1px 0 1px 0;
 }
-.event-registration button {
-  width: 100%;
-  background: none;
-  appearance: none;
-  -webkit-appearance: none;
-  border: 1px solid black;
-  margin-top: 1rem;
-  font-weight: bold;
-  padding: 1rem;
+.event__registration .submit {
+  align-self: flex-end;
 }
 main {
   padding: 0 5vw;

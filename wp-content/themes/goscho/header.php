@@ -26,6 +26,7 @@
 			--accent_color: <?php echo get_theme_mod( 'color_scheme')?>;
 		}
 	</style>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
@@ -33,7 +34,9 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<h2 class="main">Goscho.ch</h2>
+			<a href="/">
+				<h2 class="main">Goscho.ch</h2>
+			</a>
 		</div><!-- .site-branding -->
 		<div class="site-logo">
 			<img src="" alt="">

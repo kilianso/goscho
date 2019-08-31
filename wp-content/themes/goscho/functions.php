@@ -205,3 +205,13 @@ function extend_design( $wp_customize ) {
 	$wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false';
 };
 add_action( 'customize_register', 'extend_design' );
+
+function remove_acf_time_picker_seconds() { ?>
+	<style>
+	  .ui_tpicker_second,
+	  .ui_tpicker_second::before {
+		display: none !important;
+	  }
+	</style>
+  <?php }
+  add_action('admin_head', 'remove_acf_time_picker_seconds');

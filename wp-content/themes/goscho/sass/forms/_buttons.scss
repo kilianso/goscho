@@ -20,3 +20,24 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+button, a.button {
+	width: 100%;
+	background: none;
+	appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid black;
+	margin-top: 1rem;
+	padding: 0.5rem;
+	max-width: 200px;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	&:hover {
+		background: black;
+		color: white;
+	}
+	&.submit {
+		font-weight: 700;
+	}
+}

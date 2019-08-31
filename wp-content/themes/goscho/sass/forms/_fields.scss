@@ -17,7 +17,7 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: 3px;
-	padding: 3px;
+	padding: 0.5rem 0;
 	outline: none;
 
 	&:focus {
@@ -45,6 +45,6 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
 	
 	// -webkit-text-fill-color: green;
-	-webkit-box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset;
+	box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset;
 	transition: background-color 5000s ease-in-out 0s;
 }
