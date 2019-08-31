@@ -14,7 +14,7 @@
 	$website = get_post_meta(get_the_ID(), 'website', true);
 ?>
 
-<article id="event-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="event-<?php the_ID(); ?>" <?php post_class('full-width'); ?>>
 	<div class="event__details">
 		<h2 class="event__date"><?php echo $date->format('d.m.Y'); ?></h2>
 		<h1 class="event__titel"><?php the_title(); ?></h1>
@@ -86,13 +86,15 @@
 	</div><!-- .entry-header -->
 
 	<div class="event__image__counter">
-		<?php goscho_post_thumbnail(); ?>
-		<p class="counter">
-			<?php echo get_post_meta(get_the_ID(), 'plaetze_verfuegbar', true); ?>
-			 von 
-			<?php echo get_post_meta(get_the_ID(), 'plaetze_anzahl', true); ?>
-			Plätze frei
-		</p>
+		<div class="event__image">
+			<?php goscho_post_thumbnail(); ?>
+			<p class="counter">
+				<?php echo get_post_meta(get_the_ID(), 'plaetze_verfuegbar', true); ?>
+				 von 
+				<?php echo get_post_meta(get_the_ID(), 'plaetze_anzahl', true); ?>
+				Plätze frei
+			</p>
+		</div>
 	</div>
 
 	<div class="event__registration">

@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<h4>Footer</h4>
+			<h4>Konzert-Standort: Muristrasse 93, 3006 Bern</h4>
 			<!-- <a href="<?php /* echo esc_url( __( 'https://wordpress.org/', 'goscho' ) ); */ ?>"> -->
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
