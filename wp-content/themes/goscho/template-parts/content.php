@@ -96,6 +96,7 @@
 			</p>
 		</div>
 	</div>
+	
 
 	<div class="event__registration">
 		<h2>Anmeldung</h2>
