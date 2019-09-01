@@ -111,8 +111,7 @@ article.post {
 
 .event__details, .event__image__counter, .event__registration {
 	flex: 1 0 100%;
-	min-width: 320px;
-	padding: 5vw;
+	padding: 5vw 0;
 	h2 {
 		margin: 0;
 	}
@@ -121,6 +120,7 @@ article.post {
 	}
 	@media only screen and (min-width: 990px) {
 		flex: 1 0 33.333%;
+		padding: 5vw;
 	}
 }
 
@@ -209,8 +209,17 @@ footer {
 	background: black;
 	color: white;
 	.footer__inner {
-		max-width: $max__width;
+		max-width: calc(#{$max__width} + 10vw);
 		margin: 0 auto;
+		padding: 0 5vw;
+		display: flex;
+		a {
+			color: white;
+		}
+		.site-info.right {
+			flex: 1;
+			text-align: right;
+		}
 	}
 }
 

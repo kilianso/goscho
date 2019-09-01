@@ -772,8 +772,7 @@ article.post.full-width {
 }
 .event__details, .event__image__counter, .event__registration {
   flex: 1 0 100%;
-  min-width: 320px;
-  padding: 5vw;
+  padding: 5vw 0;
 }
 .event__details h2, .event__image__counter h2, .event__registration h2 {
   margin: 0;
@@ -784,6 +783,7 @@ article.post.full-width {
 @media only screen and (min-width: 990px) {
   .event__details, .event__image__counter, .event__registration {
     flex: 1 0 33.333%;
+    padding: 5vw;
   }
 }
 .event__details {
@@ -861,8 +861,17 @@ footer {
   color: white;
 }
 footer .footer__inner {
-  max-width: 1440px;
+  max-width: calc(1440px + 10vw);
   margin: 0 auto;
+  padding: 0 5vw;
+  display: flex;
+}
+footer .footer__inner a {
+  color: white;
+}
+footer .footer__inner .site-info.right {
+  flex: 1;
+  text-align: right;
 }
 .site-branding, .main-navigation {
   flex: 1;
