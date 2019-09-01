@@ -779,6 +779,7 @@ article.post.full-width {
 }
 .event__details h1, .event__image__counter h1, .event__registration h1 {
   margin-top: 0;
+  line-height: 1.25;
 }
 @media only screen and (min-width: 990px) {
   .event__details, .event__image__counter, .event__registration {
