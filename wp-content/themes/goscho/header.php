@@ -40,7 +40,8 @@
 				</a>
 			</div><!-- .site-branding -->
 			<div class="site-logo">
-				<img src="" alt="">
+				<img class="logo__goscho--drink" src="https://goscho.local/wp-content/uploads/2019/09/goscho_drink.svg" alt="Goscho">
+				<img class="logo__goscho--gitarre" src="https://goscho.local/wp-content/uploads/2019/09/goscho_gitarre.svg" alt="Goscho">
 			</div>
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'goscho' ); ?></button>

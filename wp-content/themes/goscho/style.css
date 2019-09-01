@@ -392,7 +392,7 @@ hr {
   margin-bottom: 1.5em;
 }
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em;
 }
 ul {
   list-style: disc;
@@ -686,6 +686,49 @@ header.site-header .header__inner {
   display: flex;
   align-items: center;
   margin: 0 auto;
+  position: relative;
+}
+header.site-header .header__inner .site-logo {
+  flex: 1 0 33.333%;
+  text-align: center;
+  position: relative;
+  height: 100px;
+}
+header.site-header .header__inner .site-logo img {
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@keyframes crossFadeToVisible {
+  from {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+@keyframes crossFadeToHidden {
+  from {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+header.site-header .header__inner .site-logo img.logo__goscho--gitarre {
+  visibility: hidden;
+  animation: crossFadeToVisible 0.5s linear infinite alternate;
+}
+header.site-header .header__inner .site-logo img.logo__goscho--drink {
+  visibility: visible;
+  animation: crossFadeToHidden 0.5s linear infinite alternate;
 }
 header.site-header h1 span {
   font-size: 1rem;
@@ -818,8 +861,16 @@ footer .footer__inner {
   max-width: 1440px;
   margin: 0 auto;
 }
-.site-branding {
+.site-branding, .main-navigation {
   flex: 1;
+}
+.main-navigation {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.main-navigation .menu-item:last-child a {
+  margin-right: 0;
 }
 .sticky {
   display: block;
