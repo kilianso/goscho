@@ -736,6 +736,9 @@ header.site-header h1 span {
 header.site-header a {
   color: white;
 }
+header.site-header .menu-toggle {
+  display: none;
+}
 article.post .event__inner {
   display: flex;
   flex-wrap: wrap;
