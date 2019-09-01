@@ -33,23 +33,25 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'goscho' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<a href="/">
-				<h2 class="main">Goscho.ch</h2>
-			</a>
-		</div><!-- .site-branding -->
-		<div class="site-logo">
-			<img src="" alt="">
+		<div class="header__inner">
+			<div class="site-branding">
+				<a href="/">
+					<h2 class="main">Goscho.ch</h2>
+				</a>
+			</div><!-- .site-branding -->
+			<div class="site-logo">
+				<img src="" alt="">
+			</div>
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'goscho' ); ?></button>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) );
+				?>
+			</nav><!-- #site-navigation -->
 		</div>
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'goscho' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

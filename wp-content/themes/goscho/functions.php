@@ -214,4 +214,4 @@ function remove_acf_time_picker_seconds() { ?>
 	  }
 	</style>
   <?php }
-  add_action('admin_head', 'remove_acf_time_picker_seconds');
+add_action('admin_head', 'remove_acf_time_picker_seconds');
