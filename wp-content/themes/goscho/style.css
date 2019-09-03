@@ -793,7 +793,7 @@ article.post.full-width {
   padding-right: 0;
 }
 .event__image__counter {
-  padding: 5vw 0;
+  padding: 5vw 0 calc(5vw + 3.75em) 0;
 }
 .event__image__counter .event__image {
   position: relative;
@@ -854,9 +854,14 @@ article.post.full-width {
 }
 .event__registration .submit {
   align-self: flex-end;
+  margin: 2em 0 1em 0;
+}
+@media only screen and (min-width: 990px) {
+  .event__registration .submit {
+    margin: 0;
+  }
 }
 footer {
-  text-align: center;
   background: black;
   color: white;
 }
@@ -870,7 +875,7 @@ footer .footer__inner a {
   color: white;
 }
 footer .footer__inner .site-info.right {
-  flex: 1;
+  flex: 1 0 30%;
   text-align: right;
 }
 .site-branding, .main-navigation {

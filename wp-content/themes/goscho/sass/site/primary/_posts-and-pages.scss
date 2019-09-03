@@ -133,7 +133,7 @@ article.post {
 }
 
 .event__image__counter {
-	padding: 5vw 0;
+	padding: 5vw 0 calc(5vw + 3.75em) 0;
 	.event__image {
 		position: relative;
 		img {
@@ -201,11 +201,14 @@ article.post {
 
 	.submit {
 		align-self: flex-end;
+		margin: 2em 0 1em 0;
+		@media only screen and (min-width: 990px) {
+			margin: 0;
+		}
 	}
 }
 
 footer {
-	text-align: center;
 	background: black;
 	color: white;
 	.footer__inner {
@@ -217,7 +220,7 @@ footer {
 			color: white;
 		}
 		.site-info.right {
-			flex: 1;
+			flex: 1 0 30%;
 			text-align: right;
 		}
 	}
