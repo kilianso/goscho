@@ -40,8 +40,8 @@
 				</a>
 			</div><!-- .site-branding -->
 			<div class="site-logo">
-				<img class="logo__goscho--drink" src="./wp-content/uploads/2019/09/goscho_drink.svg" alt="Goscho Drink">
-				<img class="logo__goscho--gitarre" src="./wp-content/uploads/2019/09/goscho_gitarre.svg" alt="Goscho Gitarre">
+				<img class="logo__goscho--drink" src="<?php get_home_url(); ?>/wp-content/uploads/2019/09/goscho_drink.svg" alt="Goscho Drink">
+				<img class="logo__goscho--gitarre" src="<?php get_home_url(); ?>/wp-content/uploads/2019/09/goscho_gitarre.svg" alt="Goscho Gitarre">
 			</div>
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'goscho' ); ?></button>

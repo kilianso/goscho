@@ -202,7 +202,6 @@ function extend_design( $wp_customize ) {
 
 	$wp_customize->remove_panel( 'themes' );
 	$wp_customize->remove_panel( 'widgets' );
-	$wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false';
 };
 add_action( 'customize_register', 'extend_design' );
 
