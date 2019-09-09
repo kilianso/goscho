@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
     });
     
     function submitForm(form, submit, counter, successMessage) {
-        var url = 'https://goscho.local/wp-json/gf/v2/forms/1/submissions',
+        var url = './wp-json/gf/v2/forms/1/submissions',
             username = '0867d2fa-2164-4593-a568-54f6f36e1c3f',
             password = 'cs_4463fa23b35769f2916947dcf1aa07b6eb1b65bc',
             formData = new FormData(form);
