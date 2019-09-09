@@ -197,13 +197,23 @@ article.post {
 		&:nth-child(4) {
 			border-width: 1px 0 1px 0;
 		}
+		&[disabled] {
+			opacity: 0.35;
+		}
 	}
 
-	.submit {
+	.submit, .success {
 		align-self: flex-end;
 		margin: 2em 0 1em 0;
 		@media only screen and (min-width: 990px) {
 			margin: 0;
+		}
+	}
+	.success {
+		display: none;
+		font-weight: 700;
+		&.is-visible {
+			display: block;
 		}
 	}
 }

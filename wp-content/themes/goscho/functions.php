@@ -118,14 +118,11 @@ add_action( 'widgets_init', 'goscho_widgets_init' );
 
 
 
-// include custom jQuery
-function include_custom_jquery() {
-
+// drop jQuery
+function drop_jquery() {
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
-
 }
-add_action('wp_enqueue_scripts', 'include_custom_jquery');
+add_action('wp_enqueue_scripts', 'drop_jquery');
 
 
 /**
@@ -136,7 +133,7 @@ function goscho_scripts() {
 		
 	wp_enqueue_script( 'goscho-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'goscho-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'goscho-forms', get_template_directory_uri() . '/js/forms.js', array('jquery'), '20190909', true );
+	wp_enqueue_script( 'goscho-forms', get_template_directory_uri() . '/js/forms.js', array(), '20190909', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

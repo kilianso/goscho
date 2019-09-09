@@ -89,12 +89,14 @@
 		<div class="event__image__counter">
 			<div class="event__image">
 				<?php the_post_thumbnail(); ?>
-				<p class="counter">
-					<?php echo get_post_meta(get_the_ID(), 'plaetze_verfuegbar', true); ?>
-					 von 
-					<?php echo get_post_meta(get_the_ID(), 'plaetze_anzahl', true); ?>
-					Plätze frei
-				</p>
+				<div class="counter">
+					<div class="counter__inner">
+						<span class="counter--verfuegbar"><?php echo get_post_meta(get_the_ID(), 'plaetze_verfuegbar', true); ?></span>
+						<span> von </span>
+						<span class="counter--total"><?php echo get_post_meta(get_the_ID(), 'plaetze_anzahl', true); ?></span>
+						<span>Plätze frei</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	
@@ -102,8 +104,8 @@
 			<h2>Anmeldung</h2>
 			<form action="">
 				<input type="number" name="input_1" placeholder="Anzahl Personen" autocomplete="off" required>
-				<input type="text" name="inout_2_3" placeholder="Vorname" autocomplete="off" required>
-				<input type="text" name="input_2_6" placeholder="Nachname" autocomplete="off" required>
+				<input type="text" name="input_2.3" placeholder="Vorname" autocomplete="off" required>
+				<input type="text" name="input_2.6" placeholder="Nachname" autocomplete="off" required>
 				<input type="text" name="input_3" placeholder="Email" autocomplete="off" required>
 				<!-- Not visible but needs to be submitted -->
 				<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>" hidden>
@@ -111,6 +113,7 @@
 				<input type="text" name="post_id" placeholder="Post ID" value="<?php the_ID() ?>" hidden>
 				<input type="text" name="input_8" placeholder="Not you Spam-Bot" hidden>
 			</form>
+			<span class="success">Reservation abgeschlossen. Bitte überprüfen Sie ihre E-Mails.</span>
 			<a class="submit button">Reservieren</a>
 		</div>
 	
