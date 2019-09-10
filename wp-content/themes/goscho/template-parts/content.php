@@ -82,7 +82,7 @@
 		<div class="event__registration">
 			<h2>Anmeldung</h2>
 			<form action="">
-				<input type="number" min="1" mmax="<?php $availSeats ?>" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" placeholder="Anzahl Personen" autocomplete="off" required>
+				<input type="number" name="input_1" min="1" max="<?php echo $availSeats ?>" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" placeholder="Anzahl Personen" autocomplete="off" required>
 				<input type="text" name="input_2.3" placeholder="Vorname" autocomplete="off" required>
 				<input type="text" name="input_2.6" placeholder="Nachname" autocomplete="off" required>
 				<input type="text" name="input_3" placeholder="Email" autocomplete="off" required>
