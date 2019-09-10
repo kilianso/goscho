@@ -114,7 +114,7 @@
 				<input type="text" name="input_8" placeholder="Not you Spam-Bot" hidden>
 			</form>
 			<span class="success">Reservation abgeschlossen. Bitte überprüfen Sie ihre E-Mails.</span>
-			<a class="submit button">Reservieren</a>
+			<a href="#" class="submit button">Reservieren</a>
 		</div>
 	
 		<?php /* goscho_entry_footer(); */?>

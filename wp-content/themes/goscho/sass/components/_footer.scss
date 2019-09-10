@@ -1,0 +1,17 @@
+footer {
+	background: black;
+	color: white;
+	.footer__inner {
+		max-width: calc(#{$max__width} + 10vw);
+		margin: 0 auto;
+		padding: 0 5vw;
+		display: flex;
+		a {
+			color: white;
+		}
+		.site-info.right {
+			flex: 1 0 30%;
+			text-align: right;
+		}
+	}
+}

@@ -7,7 +7,8 @@ window.addEventListener('load', function() {
             submit = el.querySelector('.event__registration .submit'),
             successMessage = el.querySelector('.event__registration .success');
         
-        submit.addEventListener('click', (function(){
+        submit.addEventListener('click', (function(e){
+            e.preventDefault();
             submit.innerHTML = 'Bitte warten...';
             submitForm(form, submit, counter, successMessage);
         }));

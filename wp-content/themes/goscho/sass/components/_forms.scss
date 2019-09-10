@@ -1,3 +1,50 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	border-radius: 0;
+	background: $color__background-button;
+	color: black;
+	line-height: 1;
+	padding: .6em 1em .4em;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+}
+
+button, a.button {
+	width: 100%;
+	background: none;
+	appearance: none;
+	-webkit-appearance: none;
+	color: black;
+	border: 1px solid black;
+	margin-top: 1rem;
+	padding: 0.5rem;
+	max-width: 200px;
+	display: block;
+	text-align: center;
+	cursor: pointer;	
+	&:focus, &:active {
+		color: black;
+	}
+	&:hover {
+		background: black;
+		color: white;
+	}
+	&.submit {
+		font-weight: 700;
+	}
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -48,7 +95,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
 	
-	// -webkit-text-fill-color: green;
+	-webkit-text-fill-color: black;
 	box-shadow: 0 0 0px 1000px rgba(0,0,0,0) inset;
 	transition: background-color 5000s ease-in-out 0s;
 }
