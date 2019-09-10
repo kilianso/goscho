@@ -223,3 +223,24 @@ function remove_acf_time_picker_seconds() { ?>
 	</style>
   <?php }
 add_action('admin_head', 'remove_acf_time_picker_seconds');
+
+// update verfügbare Plätze after submission
+function set_post_content( $entry, $form ) {
+ 	
+	// update_post_meta( $entry['event_id'], 'plaetze_verfuegbar', $meta_value, $entry['max_personen'] );
+
+	//global $post;
+	//global $wp_query;
+	//print_r($entry);
+	//die();
+	//$entry_id = $entry[7];
+	$event_id = $entry[7];
+	//$event_id = get_post_meta($entry_id,'event_id', true);
+	$current_seats = get_post_meta($event_id,'plaetze_verfuegbar', true);
+	
+	$available_seats = $current_seats - $entry[1];
+
+	update_post_meta($event_id, 'plaetze_verfuegbar', max(0, $available_seats));
+
+}
+add_action( 'gform_after_submission', 'set_post_content', 10, 2 );

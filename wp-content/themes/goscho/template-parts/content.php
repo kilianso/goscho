@@ -12,11 +12,13 @@
 	$konzertbeginn = DateTime::createFromFormat('H:i:s', get_post_meta(get_the_ID(), 'konzertbeginn', true));
 	$youtube = get_post_meta(get_the_ID(), 'youtube', true);
 	$website = get_post_meta(get_the_ID(), 'website', true);
+	$availSeats = get_post_meta(get_the_ID(),'plaetze_verfuegbar', true);
 ?>
 
 <article id="event-<?php the_ID(); ?>" <?php post_class('full-width'); ?>>
 	<div class="event__inner">
 		<div class="event__details">
+			<?php get_the_content() ?>
 			<h2 class="event__date"><?php echo $date->format('d.m.Y'); ?></h2>
 			<h1 class="event__titel"><?php the_title(); ?></h1>
 			<p class="event__description">
@@ -47,24 +49,6 @@
 				}
 				?>
 			</div>
-			<?php			
-				/*
-				if ( is_singular() ) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				else :
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif;
-	
-				if ( 'post' === get_post_type() ) :
-					?>
-						<?php
-							
-							goscho_posted_on();
-							goscho_posted_by();
-						?>
-				<?php endif; ?>
-				*/
-			?>
 			<?php
 			the_content( sprintf(
 				wp_kses(
@@ -78,11 +62,6 @@
 				),
 				get_the_title()
 			) );
-	
-			/*wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'goscho' ),
-				'after'  => '</div>',
-			) );*/
 			?>
 		</div><!-- .entry-header -->
 	
@@ -103,14 +82,13 @@
 		<div class="event__registration">
 			<h2>Anmeldung</h2>
 			<form action="">
-				<input type="number" name="input_1" placeholder="Anzahl Personen" autocomplete="off" required>
+				<input type="number" min="1" mmax="<?php $availSeats ?>" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" placeholder="Anzahl Personen" autocomplete="off" required>
 				<input type="text" name="input_2.3" placeholder="Vorname" autocomplete="off" required>
 				<input type="text" name="input_2.6" placeholder="Nachname" autocomplete="off" required>
 				<input type="text" name="input_3" placeholder="Email" autocomplete="off" required>
 				<!-- Not visible but needs to be submitted -->
 				<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>" hidden>
 				<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>" hidden>
-				<input type="text" name="post_id" placeholder="Post ID" value="<?php the_ID() ?>" hidden>
 				<input type="text" name="input_8" placeholder="Not you Spam-Bot" hidden>
 			</form>
 			<span class="success">Reservation abgeschlossen. Bitte überprüfen Sie ihre E-Mails.</span>
