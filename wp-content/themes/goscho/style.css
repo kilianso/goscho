@@ -414,8 +414,10 @@ html, body {
 .sticky {
   display: block;
 }
-.post, .page {
-  margin: 0 0 1.5em;
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .updated:not(.published) {
   display: none;
@@ -424,6 +426,7 @@ html, body {
   max-width: calc(1440px + 10vw);
   margin: 0 auto;
   padding: 0 5vw;
+  flex: 1;
 }
 .page-content, .entry-content, .entry-summary {
   margin: 1.5em 0 0;
