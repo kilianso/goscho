@@ -442,7 +442,7 @@ html, body {
   position: relative;
   padding-bottom: 33.333%;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1024px) {
   .page-about .page__featured-image {
     padding-bottom: 56.25%;
   }
