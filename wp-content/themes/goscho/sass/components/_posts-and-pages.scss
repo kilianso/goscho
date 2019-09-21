@@ -116,4 +116,22 @@ html, body {
 			}
 		}
 	}
+	.gallery {
+		column-count: 3;
+		column-gap: 40px;
+		margin: 3em auto;
+		max-width: 1440px;
+		@media screen and (max-width: 768px) {
+			column-count: 2;
+		}
+		@media screen and (max-width: 480px) {
+			column-count: 1;
+		}
+		.gallery-item {
+			max-width: 100%;
+			img {
+				width: 100%;
+			}
+		}
+	}
 }

@@ -118,11 +118,11 @@ add_action( 'widgets_init', 'goscho_widgets_init' );
 
 
 
-// drop jQuery
-function drop_jquery() {
-	wp_deregister_script('jquery');
-}
-add_action('wp_enqueue_scripts', 'drop_jquery');
+// // drop jQuery
+// function drop_jquery() {
+// 	wp_deregister_script('jquery');
+// }
+// add_action('wp_enqueue_scripts', 'drop_jquery');
 
 
 /**

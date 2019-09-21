@@ -513,6 +513,28 @@ html, body {
   max-width: 768px;
   margin: 0 auto;
 }
+.page-impressions .gallery {
+  column-count: 3;
+  column-gap: 40px;
+  margin: 3em auto;
+  max-width: 1440px;
+}
+@media screen and (max-width: 768px) {
+  .page-impressions .gallery {
+    column-count: 2;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-impressions .gallery {
+    column-count: 1;
+  }
+}
+.page-impressions .gallery .gallery-item {
+  max-width: 100%;
+}
+.page-impressions .gallery .gallery-item img {
+  width: 100%;
+}
 header.site-header {
   background: #1a1a1a;
   color: white;
