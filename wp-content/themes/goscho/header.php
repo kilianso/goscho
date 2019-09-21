@@ -36,7 +36,7 @@
 		<div class="header__inner">
 			<div class="site-branding">
 				<a href="/">
-					<h2 class="main">Goscho.ch</h2>
+					<img src="/wp-content/uploads/2019/09/goscho_logo.svg" alt="Goscho Logo">
 				</a>
 			</div><!-- .site-branding -->
 			<div class="site-logo">
