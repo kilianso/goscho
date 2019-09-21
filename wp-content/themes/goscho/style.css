@@ -493,6 +493,26 @@ html, body {
   display: block;
   float: left;
 }
+.page-impressions .content-wrap {
+  padding: 3em 5vw;
+  width: 100vw;
+  margin: 0 -5vw;
+  position: relative;
+}
+.page-impressions .content-wrap.has-background {
+  text-align: center;
+  background: var(--accent_color);
+  padding: calc(5vw + 5vh);
+}
+@media screen and (max-width: 660px) {
+  .page-impressions .content-wrap.has-background {
+    padding: calc(3vw + 3vh);
+  }
+}
+.page-impressions .content-wrap.has-background h2 {
+  max-width: 768px;
+  margin: 0 auto;
+}
 header.site-header {
   background: #1a1a1a;
   color: white;

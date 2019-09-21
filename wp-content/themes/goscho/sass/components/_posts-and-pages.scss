@@ -96,3 +96,24 @@ html, body {
 		}
 	}
 }
+
+.page-impressions {
+	.content-wrap {
+		padding: 3em 5vw;
+		width: 100vw;
+		margin: 0 -5vw;
+		position: relative;
+		&.has-background {
+			text-align: center;
+			background: var(--accent_color);
+			padding: calc(5vw + 5vh);
+			@media screen and (max-width: 660px) {
+				padding: calc(3vw + 3vh);
+			}
+			h2 {
+				max-width: 768px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
