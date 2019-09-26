@@ -913,6 +913,7 @@ a:hover, a:active {
   align-items: flex-end;
   z-index: 9;
   width: auto;
+  margin: 0;
 }
 .menu-toggle .menu-toggle--top, .menu-toggle:hover .menu-toggle--top, .menu-toggle:focus .menu-toggle--top, .menu-toggle:active .menu-toggle--top, .menu-toggle .menu-toggle--bottom, .menu-toggle:hover .menu-toggle--bottom, .menu-toggle:focus .menu-toggle--bottom, .menu-toggle:active .menu-toggle--bottom {
   margin: 0.25rem 0;
