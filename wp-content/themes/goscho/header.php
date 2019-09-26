@@ -46,7 +46,10 @@
 				</a>
 			</div>
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'goscho' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<svg class="menu-toggle--top" width="27" height="3" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5h25" stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square"/></svg>
+					<svg class="menu-toggle--bottom"width="27" height="3" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5h25" stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square"/></svg>
+				</button>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
