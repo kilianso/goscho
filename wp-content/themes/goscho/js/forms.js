@@ -6,12 +6,13 @@ window.addEventListener('load', function() {
             form = el.querySelector('.event__registration form'),
             submit = el.querySelector('.event__registration .submit'),
             successMessage = el.querySelector('.event__registration .success');
-        
-        submit.addEventListener('click', (function(e){
-            e.preventDefault();
-            submit.innerHTML = 'Bitte warten...';
-            submitForm(form, submit, counter, successMessage);
-        }));
+        if(submit) {
+            submit.addEventListener('click', (function(e){
+                e.preventDefault();
+                submit.innerHTML = 'Bitte warten...';
+                submitForm(form, submit, counter, successMessage);
+            }));
+        }
     });
     
     function submitForm(form, submit, counter, successMessage) {
