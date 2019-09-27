@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer">
 		<div class="footer__inner">
 			<div class="footer__newsletter">
-				<h2>Melden Sie sich für unseren Newsletter an.</h2>
+				<h2>Melden Sie sich für den Newsletter an.</h2>
 				<p>Erhalten Sie regelmässige News vom Goscho.</p>
 				<p>
 				<form action="https://fannyernst.us3.list-manage.com/subscribe/post" method="POST">
