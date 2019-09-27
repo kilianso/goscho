@@ -78,21 +78,31 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="event__registration">
 			<h2>Anmeldung</h2>
-			<form action="">
-				<input type="number" name="input_1" min="1" max="<?php echo $availSeats ?>" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" placeholder="Anzahl Personen" autocomplete="off" required>
-				<input type="text" name="input_2.3" placeholder="Vorname" autocomplete="off" required>
-				<input type="text" name="input_2.6" placeholder="Nachname" autocomplete="off" required>
-				<input type="text" name="input_3" placeholder="Email" autocomplete="off" required>
-				<!-- Not visible but needs to be submitted -->
-				<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>" hidden>
-				<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>" hidden>
-				<input type="text" name="input_8" placeholder="Not you Spam-Bot" hidden>
-			</form>
-			<span class="success">Reservation abgeschlossen. Bitte überprüfen Sie ihre E-Mails.</span>
-			<a href="#" class="submit button">Reservieren</a>
+			<?php 
+				if ($availSeats > 0) {
+			?>
+				<form action="">
+					<input type="number" name="input_1" min="1" max="<?php echo $availSeats ?>" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" placeholder="Anzahl Personen" autocomplete="off" required>
+					<input type="text" name="input_2.3" placeholder="Vorname" autocomplete="off" required>
+					<input type="text" name="input_2.6" placeholder="Nachname" autocomplete="off" required>
+					<input type="text" name="input_3" placeholder="Email" autocomplete="off" required>
+					<!-- Not visible but needs to be submitted -->
+					<input type="text" name="input_4" placeholder="Event Name" value="<?php the_title() ?>" hidden>
+					<input type="text" name="input_7" placeholder="Event ID" value="<?php the_ID() ?>" hidden>
+					<input type="text" name="input_8" placeholder="Not you Spam-Bot" hidden>
+				</form>
+				<span class="success">Reservation abgeschlossen. Bitte überprüfen Sie ihre E-Mails.</span>
+				<a href="#" class="submit button">Reservieren</a>
+			<?php
+				}else{
+			?>
+				<span class="soldout">Ausverkauft! Eventuell gibt es noch ein paar Plätze an der Abendkasse.</span>
+			<?php
+				}
+			?>
 		</div>
 	
 		<?php /* goscho_entry_footer(); */?>
