@@ -99,7 +99,7 @@
 			<?php
 				}else{
 			?>
-				<span class="soldout">Ausverkauft! Eventuell gibt es noch ein paar Plätze an der Abendkasse.</span>
+				<span class="soldout"><strong>Ausverkauft!</strong><br>Eventuell gibt es noch ein paar Plätze an der Abendkasse.</span>
 			<?php
 				}
 			?>
