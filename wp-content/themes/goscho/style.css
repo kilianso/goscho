@@ -851,6 +851,7 @@ footer .footer__inner .footer__newsletter input {
   width: 100%;
   background: none;
   appearance: none;
+  color: white;
   -webkit-appearance: none;
   border-style: solid;
   border-color: white;
