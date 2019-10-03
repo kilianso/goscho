@@ -51,10 +51,10 @@
 			<div class="footer__contact">
 				<h2>Kontakt</h2>
 				<p>
-					Claude Bowald<br>
-					Muristrasse 92<br>
+					Goscho<br>
+					Muristrasse 93<br>
 					3006 Bern<br>
-					c.bowald@bluewin.ch
+					goscho@bluewin.ch
 				</p>
 				<p>
 					<a href="https://www.facebook.com/GoschoKulturplatz" target="_blank">
