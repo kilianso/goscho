@@ -108,7 +108,7 @@ article.post {
 	}
 
 	form {
-		flex-grow: 1;
+		// flex-grow: 1;
 	}
 
 	input {
@@ -131,9 +131,9 @@ article.post {
 	.submit, .success {
 		align-self: flex-end;
 		margin: 2em 0 1em 0;
-		@media only screen and (min-width: 990px) {
-			margin: 0;
-		}
+		// @media only screen and (min-width: 990px) {
+		// 	margin: 0;
+		// }
 	}
 	.success {
 		display: none;
