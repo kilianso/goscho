@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2019 ServMask Inc.
+ * Copyright (C) 2014-2020 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,9 +69,6 @@ class Ai1wm_Import_Controller {
 							// Run function hook
 							$params = call_user_func_array( $hook['function'], array( $params ) );
 
-							// Log request
-							Ai1wm_Log::import( $params );
-
 						} catch ( Ai1wm_Import_Retry_Exception $e ) {
 							if ( defined( 'WP_CLI' ) ) {
 								WP_CLI::error( sprintf( __( 'Unable to import. Error code: %s. %s', AI1WM_PLUGIN_NAME ), $e->getCode(), $e->getMessage() ) );
@@ -79,6 +76,15 @@ class Ai1wm_Import_Controller {
 								status_header( $e->getCode() );
 								echo json_encode( array( 'errors' => array( array( 'code' => $e->getCode(), 'message' => $e->getMessage() ) ) ) );
 							}
+							exit;
+						} catch ( Ai1wm_Database_Exception $e ) {
+							if ( defined( 'WP_CLI' ) ) {
+								WP_CLI::error( sprintf( __( 'Unable to import. Error code: %s. %s', AI1WM_PLUGIN_NAME ), $e->getCode(), $e->getMessage() ) );
+							} else {
+								status_header( $e->getCode() );
+								echo json_encode( array( 'errors' => array( array( 'code' => $e->getCode(), 'message' => $e->getMessage() ) ) ) );
+							}
+							Ai1wm_Directory::delete( ai1wm_storage_path( $params ) );
 							exit;
 						} catch ( Exception $e ) {
 							if ( defined( 'WP_CLI' ) ) {
@@ -112,7 +118,7 @@ class Ai1wm_Import_Controller {
 						}
 
 						wp_remote_post(
-							apply_filters( 'ai1wm_http_import_url', admin_url( 'admin-ajax.php?action=ai1wm_import' ) ),
+							apply_filters( 'ai1wm_http_import_url', add_query_arg( array( 'ai1wm_import' => 1 ), admin_url( 'admin-ajax.php?action=ai1wm_import' ) ) ),
 							array(
 								'timeout'   => apply_filters( 'ai1wm_http_import_timeout', 10 ),
 								'blocking'  => apply_filters( 'ai1wm_http_import_blocking', false ),
@@ -136,7 +142,7 @@ class Ai1wm_Import_Controller {
 		$active_filters = array();
 		$static_filters = array();
 
-		// All in One WP Migration
+		// All-in-One WP Migration
 		if ( defined( 'AI1WM_PLUGIN_NAME' ) ) {
 			$active_filters[] = apply_filters( 'ai1wm_import_file', Ai1wm_Template::get_content( 'import/button-file' ) );
 		} else {

@@ -17,6 +17,7 @@ declare var wsAmeActorSelectorData: {
 interface SelectedActorChangedCallback {
 	(newSelectedActor: string, oldSelectedActor: string): void
 }
+
 interface SaveVisibleActorAjaxParams {
 	ajaxUpdateAction: string,
 	ajaxUpdateNonce: string,
@@ -40,6 +41,7 @@ class AmeActorSelector {
 	private cachedVisibleActors: IAmeActor[] = null;
 
 	private selectorNode;
+	private isDomInitStarted: boolean = false;
 
 	constructor(
 		actorManager: AmeActorManagerInterface,
@@ -61,16 +63,17 @@ class AmeActorSelector {
 		const _ = AmeActorSelector._;
 		this.visibleUsers = _.intersection(this.visibleUsers, _.keys(actorManager.getUsers()));
 
-		if (jQuery.isReady) {
+		jQuery(() => {
 			this.initDOM();
-		} else {
-			jQuery(() => {
-				this.initDOM();
-			});
-		}
+		});
 	}
 
 	private initDOM() {
+		if (this.isDomInitStarted) {
+			return;
+		}
+		this.isDomInitStarted = true;
+
 		this.selectorNode = jQuery('#ws_actor_selector');
 		this.populateActorSelector();
 
@@ -143,6 +146,11 @@ class AmeActorSelector {
 	}
 
 	private highlightSelectedActor() {
+		//Set up and populate the selector element if we haven't done that yet.
+		if (!this.isDomInitStarted) {
+			this.initDOM();
+		}
+
 		//Deselect the previous item.
 		this.selectorNode.find('.current').removeClass('current');
 
@@ -257,9 +265,9 @@ class AmeActorSelector {
 		jQuery.post(
 			this.ajaxParams.adminAjaxUrl,
 			{
-				'action' : this.ajaxParams.ajaxUpdateAction,
-				'_ajax_nonce' : this.ajaxParams.ajaxUpdateNonce,
-				'visible_users' : jQuery.toJSON(this.visibleUsers)
+				'action': this.ajaxParams.ajaxUpdateAction,
+				'_ajax_nonce': this.ajaxParams.ajaxUpdateNonce,
+				'visible_users': jQuery.toJSON(this.visibleUsers)
 			}
 		);
 	}
@@ -279,5 +287,25 @@ class AmeActorSelector {
 			}
 		}
 		return name;
+	}
+
+	/**
+	 * Wrap the selected actor in a computed observable so that it can be used with Knockout.
+	 * @param ko
+	 */
+	createKnockoutObservable(ko: KnockoutStatic): KnockoutComputed<string> {
+		const internalObservable = ko.observable(this.selectedActor);
+		const publicObservable = ko.computed<string>({
+			read: function () {
+				return internalObservable();
+			},
+			write: (newActor: string) => {
+				this.setSelectedActor(newActor);
+			}
+		});
+		this.onChange((newSelectedActor: string) => {
+			internalObservable(newSelectedActor);
+		});
+		return publicObservable;
 	}
 }

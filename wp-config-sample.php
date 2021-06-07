@@ -63,7 +63,7 @@ define('NONCE_SALT',       'put your unique phrase here');
  *  Wenn du verschiedene Präfixe benutzt, kannst du innerhalb einer Datenbank
  *  verschiedene WordPress-Installationen betreiben. Nur Zahlen, Buchstaben und Unterstriche bitte!
  */
-$table_prefix  = 'wp_';
+$table_prefix = 'wp_';
 
 /**
  * For developers: WordPress debugging mode.

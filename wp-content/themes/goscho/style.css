@@ -786,9 +786,6 @@ article.post.full-width {
   align-self: flex-end;
   margin-bottom: 1em;
 }
-.event__registration form {
-  flex-grow: 1;
-}
 .event__registration input {
   width: 100%;
   background: none;
@@ -808,11 +805,6 @@ article.post.full-width {
 .event__registration .submit, .event__registration .success {
   align-self: flex-end;
   margin: 2em 0 1em 0;
-}
-@media only screen and (min-width: 990px) {
-  .event__registration .submit, .event__registration .success {
-    margin: 0;
-  }
 }
 .event__registration .success {
   display: none;
