@@ -21,13 +21,27 @@
 			<?php get_the_content() ?>
 			<h2 class="event__date"><?php echo $date->format('d.m.Y'); ?></h2>
 			<h1 class="event__titel"><?php the_title(); ?></h1>
+			
 			<p class="event__description">
-				<?php echo get_post_meta(get_the_ID(), 'kurzbeschrieb', true) ?>
+				<?php echo nl2br(get_post_meta(get_the_ID(), 'kurzbeschrieb', true)) ?>
 			</p>
 			<p class="event__info">
 				<strong>Türöffnung: <?php echo $tueroeffnung->format('H:i'); ?></strong><br>
 				<strong>Konzertbeginn: <?php echo $konzertbeginn->format('H:i'); ?></strong><br>
-				<strong>Richtpreis: <?php echo get_post_meta(get_the_ID(), 'richtpreis', true) ?>.-</strong><br>
+				<?php 
+					$kollekte = get_post_meta(get_the_ID(), 'kollekte', true);
+					if ($kollekte === "1") {
+						?>
+							<strong>Richtpreis: Kollekte</strong><br>
+							<small>Kollekte wird am Anlass bekanntgegeben</small>
+						<?php
+					}else {
+						?>
+							<strong>Richtpreis: <?php echo get_post_meta(get_the_ID(), 'richtpreis', true) ?>.-</strong><br>
+						<?php
+					}
+
+				?>
 			</p>
 			<div class="button__group">
 				<?php
