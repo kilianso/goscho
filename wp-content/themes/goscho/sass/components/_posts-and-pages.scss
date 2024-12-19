@@ -25,6 +25,10 @@ html, body {
 	padding: 0 5vw;
 	flex: 1;
 }
+.no-results {
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+}
 
 .page-content,
 .entry-content,
@@ -112,7 +116,13 @@ html, body {
 			}
 			h2 {
 				max-width: 768px;
-				margin: 0 auto;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			p {
+				max-width: 1440px;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 	}
